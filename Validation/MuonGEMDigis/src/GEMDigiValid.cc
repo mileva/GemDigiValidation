@@ -1,4 +1,4 @@
-#include "myValidation/MuonGEMDigis/interface/GEMDigiValid.h"
+#include "Validation/MuonGEMDigis/interface/GEMDigiValid.h"
 #include "Geometry/Records/interface/MuonGeometryRecord.h"
 #include "SimDataFormats/CrossingFrame/interface/MixCollection.h"
 #include "SimDataFormats/TrackingHit/interface/PSimHitContainer.h"
