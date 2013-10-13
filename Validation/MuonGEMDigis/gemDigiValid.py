@@ -44,16 +44,8 @@ process.dqmSource = cms.EDAnalyzer("DQMSourceExample",
 process.qTester = cms.EDFilter("QualityTester")
 
 #load module defaults
-process.load("myValidation.MuonGEMDigis.validationMuonGEMDigis_cfi")
+process.load("Validation.MuonGEMDigis.validationMuonGEMDigis_cfi")
 
-#Obsolete code commented
-#process.rechivalidation = cms.EDAnalyzer("GEMDigiValid",
-#    digiLabel = cms.untracked.string('simMuonGEMDigis'),
-#    prescaleLS = cms.untracked.int32(1),
-#    outputFile = cms.untracked.string('GEMDigiValidPlots.root'),
-#    monitorName = cms.untracked.string('YourSubsystemName'),
-#    prescaleEvt = cms.untracked.int32(1000)
-#)
 
 #Overwriting default values
 process.validationMuonGEMDigis.outputFile = cms.untracked.string('gemDigiValidPlots.root')
@@ -61,10 +53,5 @@ process.validationMuonGEMDigis.outputFile = cms.untracked.string('gemDigiValidPl
 process.p = cms.Path(process.dqmSource+process.validationMuonGEMDigis)
 process.DQMStore.verbose = 0
 process.DQM.collectorHost = ''
-
-#Obsolete code commented
-#process.p = cms.Path(process.dqmSource+process.rechivalidation)
-#process.DQMStore.verbose = 0
-#process.DQM.collectorHost = ''
 
 
